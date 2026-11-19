@@ -1,0 +1,47 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+.terraform.lock.hcl
+
+# Conserver les fichiers exemples
+!terraform.tfvars.example
+
+# AWS
+.aws/
+credentials
+config
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# Secrets
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+credentials/
+
+# Éditeurs
+.vscode/
+.idea/
+
+# Système
+Thumbs.db
+.DS_Store
+# Generated AWS outputs and local settings
+logs/
+reports/
+config/restore_ebs_config.json
+*.log
+*.bak
+*.broken

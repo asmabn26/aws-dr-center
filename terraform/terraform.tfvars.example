@@ -1,0 +1,60 @@
+aws_region      = "eu-west-3"
+aws_profile     = "your-aws-profile"
+project_name    = "pfa-drp-aws"
+environment     = "dev"
+owner           = "asma-ikram"
+expiration_date = "YYYY-MM-DD"
+
+vpc_cidr             = "10.10.0.0/16"
+public_subnet_a_cidr = "10.10.1.0/24"
+private_subnet_a_cidr = "10.10.10.0/24"
+private_subnet_b_cidr = "10.10.20.0/24"
+
+database_port = 3306
+
+admin_cidr = "YOUR_PUBLIC_IP/32"
+
+ssh_public_key_path = "~/.ssh/id_rsa.pub"
+
+ec2_instance_type = "t3.micro"
+
+ebs_volume_size = 1
+ebs_volume_type = "gp3"
+ebs_device_name = "/dev/sdf"
+
+db_engine            = "mysql"
+db_engine_version    = "8.0"
+db_instance_class    = "db.t3.micro"
+db_allocated_storage = 20
+db_name              = "pfadrpdb"
+db_username          = "adminuser"
+db_password          = "CHANGE_ME_STRONG_PASSWORD"
+
+backup_daily_retention_days      = 7
+backup_weekly_retention_days     = 30
+backup_daily_schedule            = "cron(0 1 * * ? *)"
+backup_weekly_schedule           = "cron(0 2 ? * SUN *)"
+backup_start_window_minutes      = 60
+backup_completion_window_minutes = 180
+backup_selection_tag_key         = "backup"
+backup_selection_tag_value       = "daily"
+backup_vault_name          = "primary"
+backup_kms_deletion_window = 7
+dr_region                    = "eu-north-1"
+dr_backup_vault_name          = "dr"
+dr_backup_copy_retention_days = 7
+dr_kms_deletion_window        = 7
+
+
+enable_backup_vault_lock             = true
+backup_vault_lock_min_retention_days = 7
+backup_vault_lock_max_retention_days = 30
+
+# J19 — Monitoring and notifications
+notification_email_asma   = "student1@example.com"
+notification_email_ikram  = "student2@example.com"
+cloudwatch_dashboard_name = "pfa-drp-aws-dashboard"
+
+# J20 — CloudTrail audit
+cloudtrail_name               = "audit"
+cloudtrail_log_retention_days = 30
